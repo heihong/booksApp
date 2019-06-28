@@ -1,0 +1,15 @@
+.margin{
+  margin: 20px;
+}
+
+.align {
+  align-items: flex-end;
+}
+
+.line {
+  text-decoration: line-through;
+}
+
+.margin-left{
+  margin-left: 20px;
+}
