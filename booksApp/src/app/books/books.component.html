@@ -1,3 +1,5 @@
-<p>
-  books works!
-</p>
+<div class="row align">
+  <div *ngFor="let book of books | filter : searchText" class="margin">
+    <app-book [book] = "book"></app-book>
+  </div>
+</div>

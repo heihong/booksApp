@@ -24,8 +24,4 @@ export class BooksComponent implements OnInit {
       );
   }
 
-  addToCart(book): void {
-    this.cartData.cart.push(book);
-  }
-
 }

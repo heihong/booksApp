@@ -7,9 +7,10 @@ import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 import {InMemoryBooksService} from "./../memoryData/InMemoryBooksService";
 import {CartData} from '../cartData/cartData';
 import {BooksService} from './books.service';
+import { BookComponent } from './book/book.component';
 
 @NgModule({
-  declarations: [BooksComponent , FilterPipe],
+  declarations: [BooksComponent , FilterPipe, BookComponent],
   providers: [CartData, BooksService],
   imports: [
     CommonModule,
