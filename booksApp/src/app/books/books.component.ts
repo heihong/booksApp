@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { BooksService } from './books.service';
+import { HttpClient } from '@angular/common/http';
+import { CartData } from "../cartData/cartData";
+import {Book} from "../models/book.model";
 
 @Component({
   selector: 'app-books',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient , private booksService: BooksService, private cartData : CartData){
 
-  ngOnInit() {
+  }
+
+  private books : Book[];
+
+  ngOnInit(){
+    this.booksService.getBooks()
+      .subscribe((data) =>
+        this.books = data
+      );
+  }
+
+  addToCart(book): void {
+    this.cartData.cart.push(book);
   }
 
 }
