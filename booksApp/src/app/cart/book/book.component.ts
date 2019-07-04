@@ -10,15 +10,17 @@ import {CartData} from '../../cartData/cartData';
 export class BookComponent {
 
   @Input() book: Book;
+  @Output() updateParentData = new EventEmitter<string>();
 
-  private addBook: String = "add to cart";
+  private removeBook: String = "remove from cart";
 
   constructor(private cartData : CartData){
 
   }
 
-  addToCart(book): void {
-    this.cartData.cart.push(book);
+  removeToCart(index) :void {
+    this.cartData.cart.splice(index, 1);
+    this.updateParentData.emit('complete');
   }
 
 }
