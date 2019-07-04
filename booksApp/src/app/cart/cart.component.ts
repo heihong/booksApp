@@ -4,11 +4,11 @@ import { OfferService} from "../offer/offer.service";
 import { CartData } from "../cartData/cartData";
 import {resultOffer} from "../models/resultOffer.model";
 import {Offer} from "../models/offer.model";
+import {ObjectUnsubscribedError} from 'rxjs/index';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  providers: [OfferService],
   styleUrls: ['./cart.component.css']
 })
 
@@ -32,10 +32,10 @@ export class CartComponent implements OnInit{
     }
   ];
 
-  private totalCart: number;
+  public totalCart: number;
   private resultOffers;
   private bestOffer;
-  private textDiscount;
+  private textDiscount: String;
 
   constructor(private cartData: CartData, private offerService : OfferService){
   }
@@ -54,12 +54,6 @@ export class CartComponent implements OnInit{
 
   total(books): number {
     return books.reduce((acc, b) => acc + b.price, 0);
-  }
-
-  removeToCart(index) :void {
-    this.cartData.cart.splice(index, 1);
-    // this.getOffers(this.getlistIsbn(this.cartData.cart));
-    this.updateData();
   }
 
 
