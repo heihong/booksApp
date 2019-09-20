@@ -32,6 +32,10 @@
     "@angular/cli": "~7.3.7",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
+    "@ngrx/effects": "^8.3.0",
+    "@ngrx/entity": "^8.3.0",
+    "@ngrx/store": "^8.3.0",
+    "@ngrx/store-devtools": "^8.3.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/lodash": "^4.14.123",
@@ -44,6 +48,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-mocha-reporter": "^2.2.5",
+    "rxjs-compat": "6.3.3",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
