@@ -2,4 +2,12 @@
   <div *ngFor="let book of books | filter : searchText" class="margin">
     <app-book [book] = "book"></app-book>
   </div>
+
+  <ul>
+    <li *ngFor="let todo of (todos$ | async)?.data">
+      <label>{{ todo.title }}</label>
+      <input type="checkbox" [value]="todo.completed"/>
+      <button>Supprimer</button>
+    </li>
+  </ul>
 </div>
