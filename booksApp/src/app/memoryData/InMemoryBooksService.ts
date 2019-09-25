@@ -10,7 +10,7 @@ export class InMemoryBooksService implements InMemoryDbService {
   createDb() : {} {
     const books :Book[] = [
       {
-        "isbn": "c8fabf68-8374-48fe-a7ea-a00ccd07afff",
+        id: 1,
         "title": "Henri Potier à l'école des sorciers",
         "price": 35,
         "synopsis": [
@@ -20,7 +20,7 @@ export class InMemoryBooksService implements InMemoryDbService {
         ]
       },
       {
-        "isbn": "a460afed-e5e7-4e39-a39d-c885c05db861",
+        id: 2,
         "title": "Henri Potier et la Chambre des secrets",
         "price": 30,
         "synopsis": [
@@ -29,7 +29,7 @@ export class InMemoryBooksService implements InMemoryDbService {
         ]
       },
       {
-        "isbn": "fcd1e6fa-a63f-4f75-9da4-b560020b6acc",
+        id: 3,
         "title": "Henri Potier et le Prisonnier d'Azkaban",
         "price": 30,
         "synopsis": [
@@ -39,7 +39,7 @@ export class InMemoryBooksService implements InMemoryDbService {
         ]
       },
       {
-        "isbn": "c30968db-cb1d-442e-ad0f-80e37c077f89",
+        id: 4,
         "title": "Henri Potier et la Coupe de feu",
         "price": 29,
         "synopsis": [
@@ -49,7 +49,7 @@ export class InMemoryBooksService implements InMemoryDbService {
         ]
       },
       {
-        "isbn": "78ee5f25-b84f-45f7-bf33-6c7b30f1b502",
+        id: 5,
         "title": "Henri Potier et l'Ordre du phénix",
         "price": 28,
         "synopsis": [
@@ -58,7 +58,7 @@ export class InMemoryBooksService implements InMemoryDbService {
         ]
       },
       {
-        "isbn": "cef179f2-7cbc-41d6-94ca-ecd23d9f7fd6",
+        id: 6,
         "title": "Henri Potier et le Prince de sang-mêlé",
         "price": 30,
         "synopsis": [
@@ -66,7 +66,7 @@ export class InMemoryBooksService implements InMemoryDbService {
         ]
       },
       {
-        "isbn": "bbcee412-be64-4a0c-bf1e-315977acd924",
+        id: 7,
         "title": "Henri Potier et les Reliques de la Mort",
         "price": 35,
         "synopsis": [
