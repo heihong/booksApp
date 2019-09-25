@@ -1,6 +1,11 @@
 export interface Book{
-  isbn : string;
-  title : string;
-  price : number;
-  synopsis : string[];
+  id: number;
+  title: string;
+  price: number;
+  synopsis: string[];
+}
+
+
+export interface BooksState {
+  data: Book[];
 }

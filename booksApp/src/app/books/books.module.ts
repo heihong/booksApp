@@ -4,10 +4,13 @@ import { BooksComponent } from './books.component';
 import {FilterPipe} from './pipe/filter.pipe';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
-import {InMemoryBooksService} from "./../memoryData/InMemoryBooksService";
+import {InMemoryBooksService} from './../memoryData/InMemoryBooksService';
+import { EffectsModule } from '@ngrx/effects';
+
 import {CartData} from '../cartData/cartData';
 import {BooksService} from './books.service';
 import { BookComponent } from './book/book.component';
+import {BooksEffects} from './store/books.effect';
 
 @NgModule({
   declarations: [BooksComponent , FilterPipe, BookComponent],
@@ -17,7 +20,8 @@ import { BookComponent } from './book/book.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryBooksService, { dataEncapsulation: false },
-    )
+    ),
+    EffectsModule.forRoot([BooksEffects])
   ]
 })
 export class BooksModule { }

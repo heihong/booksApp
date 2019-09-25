@@ -3,14 +3,18 @@ import { InjectionToken } from '@angular/core';
 
 import { todosReducer } from './todo-list.reducer';
 import { TodoListState  } from '../../models/todo.model';
+import {bookReducer} from '../../books/store/books.reducer';
+import {BooksState} from '../../models/book.model';
 
 // Le root reducer
 const reducers = {
-  todos: todosReducer
+ // todos: todosReducer,
+  books: bookReducer
 };
 
 export interface AppState {
-  todos: TodoListState;
+//  todos: TodoListState;
+  books: BooksState;
 }
 // Nécéssaire pour l'AOT
 export function getReducers() {
