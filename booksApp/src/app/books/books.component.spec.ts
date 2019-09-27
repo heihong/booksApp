@@ -5,7 +5,7 @@ import {FilterPipe} from './pipe/filter.pipe';
 import {BookComponent} from './book/book.component';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {CartData} from '../cartData/cartData';
-import {BooksService} from './books.service';
+import {BooksService} from '../services/books.service';
 import {Book} from '../models/book.model';
 
 describe('BooksComponent', () => {
@@ -84,7 +84,7 @@ describe('BooksComponent', () => {
       expect(books.length).toBe(4);
       expect(books).toEqual(bookMockData);
     })
-    
+
     const request  = httpMock.expectOne(booksService.booksUrl);
     expect(request.request.method).toBe('GET');
 
