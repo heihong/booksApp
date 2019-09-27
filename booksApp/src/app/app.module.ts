@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CartModule} from './cart/cart.module';
-import {BooksModule} from './books/books.module';
+import {BooksModule} from './containers/books/books.module';
 
 @NgModule({
   declarations: [

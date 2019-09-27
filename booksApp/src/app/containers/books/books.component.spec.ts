@@ -1,12 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BooksComponent } from './books.component';
-import {FilterPipe} from './pipe/filter.pipe';
-import {BookComponent} from './book/book.component';
+import {FilterPipe} from '../../services/pipe/filter.pipe';
+import {BookComponent} from '../../components/book/book.component';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
-import {CartData} from '../cartData/cartData';
-import {BooksService} from '../services/books/books.service';
-import {Book} from '../models/book.model';
+import {CartData} from '../../cartData/cartData';
+import {BooksService} from '../../services/books/books.service';
+import {Book} from '../../models/book.model';
 
 describe('BooksComponent', () => {
   let component: BooksComponent;
