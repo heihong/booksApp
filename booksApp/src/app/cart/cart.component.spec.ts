@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CartComponent } from './cart.component';
 import {CartData} from '../cartData/cartData';
 import {BookComponent} from '../books/book/book.component';
-import {OfferService} from '../offer/offer.service';
+import {OfferService} from '../services/offer/offer.service';
 
 describe('CartComponent', () => {
   let cartComponentInstance: CartComponent;

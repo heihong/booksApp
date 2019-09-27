@@ -5,7 +5,7 @@ import {FilterPipe} from './pipe/filter.pipe';
 import {BookComponent} from './book/book.component';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {CartData} from '../cartData/cartData';
-import {BooksService} from '../services/books.service';
+import {BooksService} from '../services/books/books.service';
 import {Book} from '../models/book.model';
 
 describe('BooksComponent', () => {
