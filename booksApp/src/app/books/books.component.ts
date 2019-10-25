@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { BooksService } from '../../services/books/books.service';
+import { BooksService } from '../services/books/books.service';
 import { HttpClient } from '@angular/common/http';
-import { CartData } from "../../cartData/cartData";
-import {Book} from "../../models/book.model";
+import { CartData } from "../cartData/cartData";
+import {Book} from "../models/book.model";
 
 @Component({
   selector: 'app-books',
