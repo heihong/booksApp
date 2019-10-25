@@ -1,5 +1,5 @@
 export interface Book{
-  isbn : string;
+  id : number;
   title : string;
   price : number;
   synopsis : string[];

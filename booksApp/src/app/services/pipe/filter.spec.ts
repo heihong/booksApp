@@ -10,7 +10,7 @@ describe('FilterPipe', () => {
   it('should return Henri Potier et la Chambre des secrets', ()  =>{
     let books = [
       {
-        "isbn": "c8fabf68-8374-48fe-a7ea-a00ccd07afff",
+        "id": 1,
         "title": "Henri Potier à l'école des sorciers",
         "price": 35,
         "cover": "http://henri-potier.xebia.fr/hp0.jpg",
@@ -19,7 +19,7 @@ describe('FilterPipe', () => {
         ]
       },
       {
-        "isbn": "a460afed-e5e7-4e39-a39d-c885c05db861",
+        "id": 2,
         "title": "Henri Potier et la Chambre des secrets",
         "price": 30,
         "cover": "http://henri-potier.xebia.fr/hp1.jpg",
@@ -28,7 +28,7 @@ describe('FilterPipe', () => {
         ]
       }];
     let result = [{
-      "isbn": "a460afed-e5e7-4e39-a39d-c885c05db861",
+      "id": 2,
       "title": "Henri Potier et la Chambre des secrets",
       "price": 30,
       "cover": "http://henri-potier.xebia.fr/hp1.jpg",
@@ -47,7 +47,7 @@ describe('FilterPipe', () => {
   it('should return books', ()  =>{
     let books = [
       {
-        "isbn": "c8fabf68-8374-48fe-a7ea-a00ccd07afff",
+        "id": 1,
         "title": "Henri Potier à l'école des sorciers",
         "price": 35,
         "cover": "http://henri-potier.xebia.fr/hp0.jpg",
@@ -56,7 +56,7 @@ describe('FilterPipe', () => {
         ]
       },
       {
-        "isbn": "a460afed-e5e7-4e39-a39d-c885c05db861",
+        "id": 2,
         "title": "Henri Potier et la Chambre des secrets",
         "price": 30,
         "cover": "http://henri-potier.xebia.fr/hp1.jpg",

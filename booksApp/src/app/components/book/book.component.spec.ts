@@ -19,7 +19,7 @@ describe('BookComponent', () => {
   }));
 
   const bookData: Book = {
-      "isbn": "c8fabf68-8374-48fe-a7ea-a00ccd07afff",
+      "id": 1,
       "title": "Henri Potier à l'école des sorciers",
       "price": 35,
       "synopsis": [
@@ -43,7 +43,7 @@ describe('BookComponent', () => {
   it('should add to cart', ()  =>{
     cartData.cart = [
       {
-        "isbn": "c8fabf68-8374-48fe-a7ea-a00ccd07afff",
+        "id": 1,
         "title": "Henri Potier à l'école des sorciers",
         "price": 35,
         "synopsis": [
@@ -51,7 +51,7 @@ describe('BookComponent', () => {
         ]
       },
       {
-        "isbn": "a460afed-e5e7-4e39-a39d-c885c05db861",
+        "id": 2,
         "title": "Henri Potier et la Chambre des secrets",
         "price": 30,
         "synopsis": [
@@ -59,7 +59,7 @@ describe('BookComponent', () => {
         ]
       }];
     let book = {
-      "isbn": "c30968db-cb1d-442e-ad0f-80e37c077f89",
+      "id": 3,
       "title": "Henri Potier et la Coupe de feu",
       "price": 29,
       "synopsis": [

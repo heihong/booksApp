@@ -20,7 +20,7 @@ describe('CartComponent', () => {
 
   let bookData = [
     {
-      "isbn": "c8fabf68-8374-48fe-a7ea-a00ccd07afff",
+      "id": 1,
       "title": "Henri Potier à l'école des sorciers",
       "price": 35,
       "synopsis": [
@@ -30,7 +30,7 @@ describe('CartComponent', () => {
       ]
     },
     {
-      "isbn": "a460afed-e5e7-4e39-a39d-c885c05db861",
+      "id": 2,
       "title": "Henri Potier et la Chambre des secrets",
       "price": 30,
       "synopsis": [

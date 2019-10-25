@@ -18,7 +18,7 @@ describe('BookComponent', () => {
   }));
 
   const bookData: Book = {
-    "isbn": "c8fabf68-8374-48fe-a7ea-a00ccd07afff",
+    "id": 1,
     "title": "Henri Potier à l'école des sorciers",
     "price": 35,
     "synopsis": [
@@ -42,7 +42,7 @@ describe('BookComponent', () => {
 
     cartData.cart = [
       {
-        "isbn": "c8fabf68-8374-48fe-a7ea-a00ccd07afff",
+        "id": 1,
         "title": "Henri Potier à l'école des sorciers",
         "price": 35,
         "synopsis": [
@@ -50,7 +50,7 @@ describe('BookComponent', () => {
         ]
       },
       {
-        "isbn": "a460afed-e5e7-4e39-a39d-c885c05db861",
+        "id": 2,
         "title": "Henri Potier et la Chambre des secrets",
         "price": 30,
         "synopsis": [
@@ -58,7 +58,7 @@ describe('BookComponent', () => {
         ]
       }];
     let result = [{
-      "isbn": "c8fabf68-8374-48fe-a7ea-a00ccd07afff",
+      "id": 1,
       "title": "Henri Potier à l'école des sorciers",
       "price": 35,
       "synopsis": [
