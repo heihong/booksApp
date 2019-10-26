@@ -48,7 +48,7 @@ describe('BooksComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  const bookMockData : Book[] = [
+  const bookMockData: Book[] = [
     {
       "id": 1,
       "title": "Henri Potier à l'école des sorciers",
@@ -83,6 +83,17 @@ describe('BooksComponent', () => {
 
     request.flush(bookMockData);
 
+  });
+
+  it('should create a book', ()  => {
+    component.books = bookMockData;
+
+    let book = {
+      "title": "Henri Potier et la Coupe de feu",
+      "price": 29
+    };
+    component.onBookCreated(book);
+    expect(component.books.length).toEqual(5);
   });
 
 

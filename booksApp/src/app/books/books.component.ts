@@ -11,11 +11,11 @@ import {Book} from "../models/book.model";
 })
 export class BooksComponent implements OnInit {
 
+  books: Book[];
+
   constructor(private http: HttpClient , private booksService: BooksService, private cartData : CartData){
 
   }
-
-  private books: Book[];
 
   ngOnInit() {
     this.booksService.getBooks()
