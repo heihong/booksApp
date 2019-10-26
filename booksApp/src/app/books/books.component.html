@@ -1,3 +1,6 @@
+<div class="row">
+  <app-create-book (bookCreated)="onBookCreated($event)"></app-create-book>
+</div>
 <div class="row align">
   <div *ngFor="let book of books | filter : searchText" class="margin">
     <app-book [book] = "book"></app-book>

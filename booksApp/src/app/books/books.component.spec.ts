@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {FormsModule} from '@angular/forms';
 
 import { BooksComponent } from './books.component';
 import {FilterPipe} from '../services/pipe/filter.pipe';
@@ -7,21 +8,25 @@ import {HttpClientTestingModule, HttpTestingController} from '@angular/common/ht
 import {CartData} from '../cartData/cartData';
 import {BooksService} from '../services/books/books.service';
 import {Book} from '../models/book.model';
+import {CreateBookComponent} from './create-book/create-book.component';
+
 
 describe('BooksComponent', () => {
   let component: BooksComponent;
   let fixture: ComponentFixture<BooksComponent>;
-  let booksService : BooksService;
-  let httpMock : HttpTestingController;
+  let booksService: BooksService;
+  let httpMock: HttpTestingController;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpClientTestingModule,
+        FormsModule,
+        HttpClientTestingModule
       ],
       declarations: [
         BooksComponent ,
         BookComponent,
+        CreateBookComponent,
         FilterPipe
       ],
       providers: [BooksService, CartData]
@@ -47,34 +52,22 @@ describe('BooksComponent', () => {
     {
       "id": 1,
       "title": "Henri Potier à l'école des sorciers",
-      "price": 35,
-      "synopsis": [
-        "Après la mort de ses parents"
-      ]
+      "price": 35
     },
     {
       "id": 2,
       "title": "Henri Potier et la Chambre des secrets",
-      "price": 30,
-      "synopsis": [
-        "Henri Potier passe l'été chez les Dursley et reçoit la visite de Dobby, un elfe de maison."
-      ]
+      "price": 30
     },
     {
       "id": 3,
       "title": "Henri Potier et le Prisonnier d'Azkaban",
-      "price": 30,
-      "synopsis": [
-        "Durant l'été, pour son treizième",
-      ]
+      "price": 30
     },
     {
       "id": 4,
       "title": "Henri Potier et la Coupe de feu",
-      "price": 29,
-      "synopsis": [
-        "Juste avant d'assister à la coupe du Monde ",
-      ]
+      "price": 29
     }
   ];
 

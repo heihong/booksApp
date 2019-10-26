@@ -15,13 +15,23 @@ export class BooksComponent implements OnInit {
 
   }
 
-  private books : Book[];
+  private books: Book[];
 
-  ngOnInit(){
+  ngOnInit() {
     this.booksService.getBooks()
       .subscribe((data) =>
         this.books = data
       );
   }
+
+  onBookCreated(bookData: {title: string, price: number}) {
+    this.books.push({
+      id: this.books.toString().length,
+      title: bookData.title,
+      price: bookData.price
+    });
+  }
+
+
 
 }

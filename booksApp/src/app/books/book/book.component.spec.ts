@@ -21,10 +21,7 @@ describe('BookComponent', () => {
   const bookData: Book = {
       "id": 1,
       "title": "Henri Potier à l'école des sorciers",
-      "price": 35,
-      "synopsis": [
-        "Après la mort de ses parents"
-      ]
+      "price": 35
     };
 
 
@@ -45,26 +42,17 @@ describe('BookComponent', () => {
       {
         "id": 1,
         "title": "Henri Potier à l'école des sorciers",
-        "price": 35,
-        "synopsis": [
-          "Après la mort de ses parents"
-        ]
+        "price": 35
       },
       {
         "id": 2,
         "title": "Henri Potier et la Chambre des secrets",
-        "price": 30,
-        "synopsis": [
-          "Henri Potier passe l'été chez les Dursley et reçoit la visite de Dobby, un elfe de maison."
-        ]
+        "price": 30
       }];
     let book = {
       "id": 3,
       "title": "Henri Potier et la Coupe de feu",
-      "price": 29,
-      "synopsis": [
-        "Juste avant d'assister à la coupe du Monde ",
-      ]
+      "price": 29
     };
     bookComponentInstance.addToCart(book);
     expect(cartData.cart.length).toEqual(3);
