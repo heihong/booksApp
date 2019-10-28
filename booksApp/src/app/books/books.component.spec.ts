@@ -5,7 +5,7 @@ import { BooksComponent } from './books.component';
 import {FilterPipe} from '../services/pipe/filter.pipe';
 import {BookComponent} from './book/book.component';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
-import {CartData} from '../cartData/cartData';
+import {CartData} from '../services/cart/cart.service';
 import {BooksService} from '../services/books/books.service';
 import {Book} from '../models/book.model';
 import {CreateBookComponent} from './create-book/create-book.component';

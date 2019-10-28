@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { OfferService} from "../services/offer/offer.service";
 
-import { CartData } from "../cartData/cartData";
+import { CartData } from '../services/cart/cart.service';
 import {resultOffer} from "../models/resultOffer.model";
 import {Offer} from "../models/offer.model";
-import {ObjectUnsubscribedError} from 'rxjs/index';
 
 @Component({
   selector: 'app-cart',

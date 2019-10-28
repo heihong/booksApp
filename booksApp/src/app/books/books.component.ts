@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BooksService } from '../services/books/books.service';
 import { HttpClient } from '@angular/common/http';
-import { CartData } from "../cartData/cartData";
 import {Book} from "../models/book.model";
 
 @Component({
@@ -13,7 +12,7 @@ export class BooksComponent implements OnInit {
 
   books: Book[];
 
-  constructor(private http: HttpClient , private booksService: BooksService, private cartData : CartData){
+  constructor(private http: HttpClient , private booksService: BooksService){
 
   }
 

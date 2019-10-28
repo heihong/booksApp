@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookComponent } from './book.component';
-import {CartData} from "../../cartData/cartData";
+import {CartData} from '../../services/cart/cart.service';
 import {Book} from '../../models/book.model';
 
 describe('BookComponent', () => {

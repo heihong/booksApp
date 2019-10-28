@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CartModule} from './cart/cart.module';
 import {FilterPipe} from './services/pipe/filter.pipe';
-import {CartData} from './cartData/cartData';
+import {CartData} from './services/cart/cart.service';
 import {BooksService} from './services/books/books.service';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';

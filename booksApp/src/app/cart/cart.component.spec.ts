@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CartComponent } from './cart.component';
-import {CartData} from '../cartData/cartData';
+import {CartData} from '../services/cart/cart.service';
 import {BookComponent} from '../books/book/book.component';
 import {OfferService} from '../services/offer/offer.service';
 

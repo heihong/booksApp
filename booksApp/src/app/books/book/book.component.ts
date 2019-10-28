@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {Book} from '../../models/book.model';
-import {CartData} from '../../cartData/cartData';
+import {CartData} from '../../services/cart/cart.service';
 
 @Component({
   selector: 'app-book',
