@@ -7,7 +7,7 @@ import {Book} from '../../models/book.model';
   styleUrls: ['./create-book.component.css']
 })
 export class CreateBookComponent implements OnInit {
-  @Output() bookCreated = new EventEmitter<{title: string, price: number}>();
+  @Output() onBookCreated = new EventEmitter<{title: string, price: number}>();
   title: string;
   price: number;
   constructor() { }
@@ -16,7 +16,7 @@ export class CreateBookComponent implements OnInit {
   }
 
   onCreatedBook() {
-    this.bookCreated.emit({title: this.title, price: this.price});
+    this.onBookCreated.emit({title: this.title, price: this.price});
   }
 
 }

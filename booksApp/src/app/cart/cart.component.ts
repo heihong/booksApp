@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { OfferService} from "../services/offer/offer.service";
 
-import { CartData } from '../services/cart/cart.service';
 import {resultOffer} from "../models/resultOffer.model";
 import {Offer} from "../models/offer.model";
+import {CartService} from '../services/cart/cart.service';
+import {Book} from '../models/book.model';
 
 @Component({
   selector: 'app-cart',
@@ -35,16 +36,21 @@ export class CartComponent implements OnInit{
   private resultOffers;
   private bestOffer;
   private textDiscount: String;
+  private cart: Book[];
 
-  constructor(private cartData: CartData, private offerService : OfferService){
+  constructor(private cartService: CartService, private offerService : OfferService){
   }
 
-  ngOnInit(){
-    this.updateData();
+  ngOnInit() {
+   // this.updateData();
+    this.cart = this.cartService.getCart();
   }
 
-  updateData() : void {
-    this.totalCart = this.total(this.cartData.cart);
+  removeToCart(indexData): void {
+    this.cart = this.cartService.removeToCart(indexData);
+  }
+/*  updateData() : void {
+    this.totalCart = this.total(this.cartService.getCart());
     this.resultOffers = this.getResultOffers(this.offers);
     this.bestOffer = this.getBestOffer(this.resultOffers);
     this.textDiscount = this.getTextDiscount(this.bestOffer.type);
@@ -93,7 +99,7 @@ export class CartComponent implements OnInit{
 
 
   clearCart(): void {
-    this.cartData.cart.splice(0, this.cartData.cart.length);
+    this.cartService.cart.splice(0, this.cartService.cart.length);
   }
 
   textPercentage(value): String {
@@ -123,6 +129,6 @@ export class CartComponent implements OnInit{
 
 
     }
-  }
+  }*/
 
 }

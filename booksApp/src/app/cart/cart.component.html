@@ -1,21 +1,21 @@
-<div *ngIf="cartData.cart.length == 0">
+<div *ngIf="!cart">
   <span>Empty cart</span>
 </div>
 
-<div *ngIf="cartData.cart.length > 0">
-  <button (click)="clearCart()" class="btn btn-primary">clear cart</button>
+<div *ngIf="cart">
+ <!-- <button (click)="clearCart()" class="btn btn-primary">clear cart</button>
   <div>
     Total : <span>{{bestOffer.calcul}}€</span> <span class="line margin-left">{{totalCart}}€</span>
   </div>
 
   <div>
     Discount : {{textDiscount}}
-  </div>
+  </div>-->
 
 
   <div class="row align">
-    <div *ngFor="let product of cartData.cart, let i = index" [attr.data-index]="i" class="margin">
-      <app-book [book]="product" (updateParentData) = "updateData($event)"></app-book>
+    <div *ngFor="let product of cart, let i = index" class="margin">
+      <app-book [book]="product" [index]="i" (onBookDeleted)="removeToCart($event)"></app-book>
     </div>
   </div>
 

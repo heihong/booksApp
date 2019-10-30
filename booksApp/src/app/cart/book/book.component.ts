@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {Book} from '../../models/book.model';
-import {CartData} from '../../services/cart/cart.service';
+import {CartService} from '../../services/cart/cart.service';
 
 @Component({
   selector: 'app-book',
@@ -10,17 +10,15 @@ import {CartData} from '../../services/cart/cart.service';
 export class BookComponent {
 
   @Input() book: Book;
-  @Output() updateParentData = new EventEmitter<string>();
+  @Input() index: number;
+  @Output() onBookDeleted = new EventEmitter<number>();
 
   private removeBook: String = "remove from cart";
 
-  constructor(private cartData : CartData){
+  constructor(private cartService: CartService) {}
 
-  }
-
-  removeToCart(index) :void {
-    this.cartData.cart.splice(index, 1);
-    this.updateParentData.emit('complete');
+  removeToCart(): void {
+   this.onBookDeleted.emit(this.index);
   }
 
 }
