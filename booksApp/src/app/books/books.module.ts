@@ -8,7 +8,7 @@ import {InMemoryBooksService} from "../memoryData/InMemoryBooksService";
 import {BooksService} from '../services/books/books.service';
 import { BookComponent } from './book/book.component';
 import { CreateBookComponent } from './create-book/create-book.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [BooksComponent , FilterPipe, BookComponent, CreateBookComponent],
@@ -16,6 +16,7 @@ import {FormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryBooksService, { dataEncapsulation: false },
