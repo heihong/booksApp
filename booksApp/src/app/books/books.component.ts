@@ -25,7 +25,6 @@ export class BooksComponent implements OnInit {
   }
 
   onBookCreated(bookData: {title: string, price: number}) {
-    console.log(bookData)
     this.books.push({
       id: this.books.toString().length,
       title: bookData.title,

@@ -9,8 +9,6 @@ import {FormBuilder, Validators} from '@angular/forms';
 })
 export class CreateBookComponent implements OnInit {
   @Output() onBookCreated = new EventEmitter<{title: string, price: number}>();
-  title: string;
-  price: number;
   bookForm = this.fb.group({
     title: ['', Validators.required],
     price: ['', Validators.required]
@@ -22,9 +20,8 @@ export class CreateBookComponent implements OnInit {
   }
 
   onCreatedBook() {
-    this.onBookCreated.emit({title: this.title, price: this.price});
-    this.title = null;
-    this.price = null;
+    this.onBookCreated.emit(this.bookForm.value);
+    this.bookForm.reset();
   }
 
 }
