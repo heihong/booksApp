@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OfferService} from "../services/offer/offer.service";
 
-import {resultOffer} from "../models/resultOffer.model";
-import {Offer} from "../models/offer.model";
+import {Offer} from '../models/offer.model';
 import {CartService} from '../services/cart/cart.service';
 import {Book} from '../models/book.model';
 
@@ -14,7 +13,7 @@ import {Book} from '../models/book.model';
 
 
 
-export class CartComponent implements OnInit{
+export class CartComponent implements OnInit {
 
   private offers: Offer[] = [
     {
@@ -33,12 +32,9 @@ export class CartComponent implements OnInit{
   ];
 
   public totalCart: number;
-  private resultOffers;
-  private bestOffer;
-  private textDiscount: String;
   private cart: Book[];
 
-  constructor(private cartService: CartService, private offerService : OfferService){
+  constructor(private cartService: CartService) {
   }
 
   ngOnInit() {

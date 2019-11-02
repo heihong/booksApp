@@ -3,11 +3,11 @@ import {Book} from '../../models/book.model';
 import {CartService} from '../../services/cart/cart.service';
 
 @Component({
-  selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.css']
+  selector: 'app-cart-book',
+  templateUrl: './book-cart.component.html',
+  styleUrls: ['./book-cart.component.css']
 })
-export class BookComponent {
+export class BookCartComponent {
 
   @Input() book: Book;
   @Input() index: number;

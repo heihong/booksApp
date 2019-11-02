@@ -2,7 +2,7 @@
   <span>Empty cart</span>
 </div>
 
-<div *ngIf="cart">
+
  <!-- <button (click)="clearCart()" class="btn btn-primary">clear cart</button>
   <div>
     Total : <span>{{bestOffer.calcul}}€</span> <span class="line margin-left">{{totalCart}}€</span>
@@ -12,10 +12,10 @@
     Discount : {{textDiscount}}
   </div>-->
 
-
+<div *ngIf="cart">
   <div class="row align">
     <div *ngFor="let product of cart, let i = index" class="margin">
-      <app-book [book]="product" [index]="i" (onBookDeleted)="removeToCart($event)"></app-book>
+      <app-cart-book [book]="product" [index]="i" (onBookDeleted)="removeToCart($event)"></app-cart-book>
     </div>
   </div>
 

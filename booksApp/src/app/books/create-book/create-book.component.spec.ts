@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CreateBookComponent } from './create-book.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 describe('CreateBookComponent', () => {
   let component: CreateBookComponent;
@@ -9,7 +9,7 @@ describe('CreateBookComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule],
+      imports: [FormsModule, ReactiveFormsModule],
       declarations: [ CreateBookComponent ]
     })
     .compileComponents();
@@ -23,20 +23,5 @@ describe('CreateBookComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should emit on click', () => {
-    spyOn(component.bookCreated, 'emit');
-    component.title = 'Harry';
-    component.price = 30;
-
-    // trigger the click
-    const nativeElement = fixture.nativeElement;
-    const button = nativeElement.querySelector('button');
-    button.dispatchEvent(new Event('click'));
-
-    fixture.detectChanges();
-
-    expect(component.bookCreated.emit).toHaveBeenCalledWith({title: component.title, price: component.price});
   });
 });
