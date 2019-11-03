@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BooksService } from '../services/books/books.service';
 import { HttpClient } from '@angular/common/http';
 import {Book} from "../models/book.model";
+import {CartService} from '../services/cart/cart.service';
 
 @Component({
   selector: 'app-books',
@@ -12,7 +13,7 @@ export class BooksComponent implements OnInit {
 
   books: Book[];
 
-  constructor(private http: HttpClient , private booksService: BooksService){
+  constructor(private http: HttpClient , private booksService: BooksService, private cartService: CartService) {
 
   }
 
@@ -31,6 +32,9 @@ export class BooksComponent implements OnInit {
     });
   }
 
+  addToCart(bookData: Book) {
+    this.cartService.addToCart(bookData);
+  }
 
 
 }

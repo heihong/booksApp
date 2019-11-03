@@ -1,11 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { BooksComponent } from './books.component';
 import {FilterPipe} from '../services/pipe/filter.pipe';
 import {BookComponent} from './book/book.component';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
-import {CartData} from '../services/cart/cart.service';
+import {CartService} from '../services/cart/cart.service';
 import {BooksService} from '../services/books/books.service';
 import {Book} from '../models/book.model';
 import {CreateBookComponent} from './create-book/create-book.component';
@@ -16,12 +16,14 @@ describe('BooksComponent', () => {
   let fixture: ComponentFixture<BooksComponent>;
   let booksService: BooksService;
   let httpMock: HttpTestingController;
+  let cartService: CartService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         FormsModule,
-        HttpClientTestingModule
+        HttpClientTestingModule,
+        ReactiveFormsModule
       ],
       declarations: [
         BooksComponent ,
@@ -29,18 +31,19 @@ describe('BooksComponent', () => {
         CreateBookComponent,
         FilterPipe
       ],
-      providers: [BooksService, CartData]
+      providers: [BooksService, CartService]
     });
   }));
 
   beforeEach(() => {
+    cartService = TestBed.get(CartService);
     booksService = TestBed.get(BooksService);
     httpMock = TestBed.get(HttpTestingController);
     fixture = TestBed.createComponent(BooksComponent);
     component = fixture.componentInstance;
   });
 
-  afterEach(()=>{
+  afterEach(() => {
     httpMock.verify();
   })
 
@@ -73,7 +76,7 @@ describe('BooksComponent', () => {
 
   it('should retrieve books from the API via GET', ()  =>{
 
-    booksService.getBooks().subscribe(books=>{
+    booksService.getBooks().subscribe(books => {
       expect(books.length).toBe(4);
       expect(books).toEqual(bookMockData);
     })
@@ -95,7 +98,6 @@ describe('BooksComponent', () => {
     component.onBookCreated(book);
     expect(component.books.length).toEqual(5);
   });
-
 
 
 });

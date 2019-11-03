@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {Book} from '../../models/book.model';
-import {CartData} from '../../services/cart/cart.service';
+import {CartService} from '../../services/cart/cart.service';
 
 @Component({
   selector: 'app-book',
@@ -10,15 +10,14 @@ import {CartData} from '../../services/cart/cart.service';
 export class BookComponent {
 
   @Input() book: Book;
+  @Output() onBookAdded = new EventEmitter<Book>()
 
   private addBook: String = "add to cart";
 
-  constructor(private cartData : CartData){
+  constructor(private cartService: CartService) {}
 
-  }
-
-  addToCart(book): void {
-    this.cartData.cart.push(book);
+  addToCart(bookData: Book) {
+    this.onBookAdded.emit(bookData);
   }
 
 }

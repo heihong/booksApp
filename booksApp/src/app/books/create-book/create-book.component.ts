@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Book} from '../../models/book.model';
+import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-create-book',
@@ -7,16 +8,20 @@ import {Book} from '../../models/book.model';
   styleUrls: ['./create-book.component.css']
 })
 export class CreateBookComponent implements OnInit {
-  @Output() bookCreated = new EventEmitter<{title: string, price: number}>();
-  title: string;
-  price: number;
-  constructor() { }
+  @Output() onBookCreated = new EventEmitter<{title: string, price: number}>();
+  bookForm = this.fb.group({
+    title: ['', Validators.required],
+    price: ['', Validators.required]
+  });
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
   }
 
   onCreatedBook() {
-    this.bookCreated.emit({title: this.title, price: this.price});
+    this.onBookCreated.emit(this.bookForm.value);
+    this.bookForm.reset();
   }
 
 }
