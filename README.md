@@ -1,8 +1,8 @@
 ## Exercise
 
-L’éditeur vous demande de développer un site web de e-commerce comprenant deux interfaces :
-* La première permet d’afficher les livres que l’on souhaite acheter et d’effectuer une recherche libre
-* La seconde récapitule le panier où sera appliquée __la meilleure offre commerciale possible__.
+Sur la home page de apllication, une liste de livres harry potter sont mis en vente, vous pouvez les ajoutés a votre panier et les retirés de votre panier.
+
+J'ai réalisé ce projet pour mettre en pratique des concepts angular , je continue de améliorer pour faire un back en node js et mettre du et ajouter redux en front. 
 
 ## Development server
 * Run `cd bookApp`
